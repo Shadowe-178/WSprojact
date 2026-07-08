@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Players</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${message}">Spring Boot 測試頁面</h1>
+
+    <h2>Players</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Account</th>
+            <th>Nickname</th>
+            <th>Level</th>
+            <th>Experience</th>
+            <th>Total Games</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="player : ${users}">
+            <td th:text="${player.id}">1</td>
+            <td th:text="${player.account}">account</td>
+            <td th:text="${player.nickname}">nickname</td>
+            <td th:text="${player.level}">1</td>
+            <td th:text="${player.exp}">0</td>
+            <td th:text="${player.totalGames}">0</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a href="/api/health">API: /api/health (Health Check)</a>
+    </p>
+</div>
+</body>
+</html>
